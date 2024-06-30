@@ -63,3 +63,6 @@ with c2:
 with c3:
     st.markdown(f'### Unter der Kickgrenze von {kick}')
     st.dataframe(df_below_kick)
+
+st.divider()
+st.markdown('Daten von 30.06.2024 14:10')
