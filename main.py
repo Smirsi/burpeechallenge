@@ -2,21 +2,58 @@ import streamlit as st
 from whatstk import df_from_whatsapp
 import re
 import pandas as pd
+import numpy as np
+from datetime import date
+import matplotlib.pyplot as plt
 
 
 def remove_emojis_and_tilde(text):
     return re.sub(r'[^\w\s,]', '', text)
 
 
+def plot_soll_kick():
+    start_date = pd.to_datetime('2024-06-17')
+    end_date = pd.to_datetime('2025-06-16')
+    today = pd.to_datetime(date.today())
+    total_days = (end_date - start_date).days + 1
+    dates = pd.date_range(start=start_date, end=end_date)
+    df_plot = pd.DataFrame({'Date': dates})
+    df_plot['Soll'] = np.linspace(0, 10000, total_days).astype(int)
+    df_plot['Kick'] = (df_plot['Soll'] / 3) * (3 ** (df_plot.index / (total_days - 1)))
+
+    # Plotten von Soll und Kick
+    plt.figure(figsize=(12, 6))
+    plt.plot(df_plot['Date'], df_plot['Soll'], label='Soll', marker='o')
+    plt.plot(df_plot['Date'], df_plot['Kick'], label='Kick', marker='s')
+
+    # Markiere den heutigen Tag mit einem vertikalen Strich
+    plt.axvline(x=today, color='r', linestyle='--', linewidth=2, label='Heutiger Tag')
+
+    # Beschriftungen und Titel
+    plt.xlabel('Datum')
+    plt.ylabel('Punkte')
+    plt.title('Verlauf von Soll und Kick')
+    plt.legend()
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    return plt
+
+
 st.set_page_config(layout="wide")
 st.title('Burpee- und Laufchallenge')
-kick = 131
-goal = 384
+
+
+# plot = plot_soll_kick()
+# st.pyplot(plot.gcf())
+
+kicked = 131
+kick = 269
+goal = 767
 
 st.markdown(f'## Nächster Kick')
 c1, c2, c3 = st.columns(3)
 with c1:
-    st.markdown("### 30.06.2024 18:00")
+    st.markdown("### 14.07.2024 18:00")
 with c2:
     st.markdown(f"### Zielpunktezahl: {goal}")
 with c3:
@@ -26,6 +63,7 @@ with c3:
 df = df_from_whatsapp("_chat.txt")
 df['date'] = pd.to_datetime(df['date'])
 df = df[df['date'] >= '2024-06-15']
+# st.dataframe(df)
 df['message'] = df['message'].apply(remove_emojis_and_tilde)
 df['username'] = df['username'].apply(remove_emojis_and_tilde)
 df = df[df['message'].str.isdigit()]
@@ -41,7 +79,8 @@ df = df.rename(columns={'username': 'Sportler', 'message': 'Punkte'})
 
 df_above_goal = df[df['Punkte'] >= goal]
 df_above_kick = df[(df['Punkte'] >= kick) & (df['Punkte'] < goal)]
-df_below_kick = df[df['Punkte'] < kick]
+df_below_kick = df[(df['Punkte'] >= kicked) & (df['Punkte'] < kick)]
+df_kicked = df[df['Punkte'] < kicked]
 st.divider()
 st.markdown(f'## Topsportler')
 c1, c2, c3 = st.columns(3)
@@ -53,7 +92,7 @@ with c3:
     st.markdown(f"### 3. {df.at[2, 'Sportler']}")
 st.divider()
 st.markdown('## Ranking')
-c1, c2, c3 = st.columns(3)
+c1, c2, c3, c4 = st.columns(4)
 with c1:
     st.markdown(f'### Über dem Zielwert von {goal}')
     st.dataframe(df_above_goal)
@@ -63,6 +102,10 @@ with c2:
 with c3:
     st.markdown(f'### Unter der Kickgrenze von {kick}')
     st.dataframe(df_below_kick)
+with c4:
+    st.markdown(f'### Ausgeschieden')
+    st.dataframe(df_kicked)
 
 st.divider()
-st.markdown('Daten von 30.06.2024 14:10')
+st.markdown('Daten von 30.06.2024 18:04')
+
