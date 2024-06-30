@@ -1,14 +1,11 @@
 import streamlit as st
-from whatstk import WhatsAppChat, df_from_whatsapp
+from whatstk import df_from_whatsapp
 import re
 import pandas as pd
-import numpy as np
-from whatstk.data import whatsapp_urls
 
 
 def remove_emojis_and_tilde(text):
     return re.sub(r'[^\w\s,]', '', text)
-
 
 
 st.set_page_config(layout="wide")
