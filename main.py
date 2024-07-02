@@ -92,22 +92,22 @@ for i in range(len(df['Punkte'])):
     if df.at[i, 'Punkte'] < goal and plot_goal:
         plot_goal = False
         color = 'blue'
-        c1, c2, _, c3 = st.columns([3, 6, 1, 1])
+        c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         with c1:
             st.markdown(f"### Über der 2-Wochen-Kickgrenze")
     elif df.at[i, 'Punkte'] < kick and plot_kick:
         plot_kick = False
-        c1, c2, _, c3 = st.columns([3, 6, 1, 1])
+        c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         color = 'orange'
         with c1:
             st.markdown(f"### Unter der 2-Wochen-Kickgrenze")
     elif df.at[i, 'Punkte'] < kicked and plot_kicked:
         plot_kicked = False
         color = 'red'
-        c1, c2, _, c3 = st.columns([3, 6, 1, 1])
+        c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         with c1:
             st.markdown(f"### Gekickt")
-    _, c1, c2, _, c3 = st.columns([1, 2, 6, 1, 1])
+    c1, c2, _, c3 = st.columns([3, 3, 1, 1])
     with c1:
         st.markdown(f"#### :{color}[{i+1}. {df.at[i, 'Sportler']}]")
     with c2:
