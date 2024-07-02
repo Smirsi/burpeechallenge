@@ -49,6 +49,10 @@ st.title('Burpee- und Laufchallenge')
 kicked = 131
 kick = 269
 goal = 767
+plot_goal = True
+plot_kick = True
+plot_kicked = True
+color = 'green'
 
 st.markdown(f'## Nächster Kick')
 c1, c2, c3 = st.columns(3)
@@ -82,30 +86,51 @@ df_above_kick = df[(df['Punkte'] >= kick) & (df['Punkte'] < goal)]
 df_below_kick = df[(df['Punkte'] >= kicked) & (df['Punkte'] < kick)]
 df_kicked = df[df['Punkte'] < kicked]
 st.divider()
-st.markdown(f'## Topsportler')
-c1, c2, c3 = st.columns(3)
-with c1:
-    st.markdown(f"### 1. {df.at[0, 'Sportler']}")
-with c2:
-    st.markdown(f"### 2. {df.at[1, 'Sportler']}")
-with c3:
-    st.markdown(f"### 3. {df.at[2, 'Sportler']}")
-st.divider()
-st.markdown('## Ranking')
-c1, c2, c3, c4 = st.columns(4)
-with c1:
-    st.markdown(f'### Über dem Zielwert von {goal}')
-    st.dataframe(df_above_goal)
-with c2:
-    st.markdown(f'### Über der Kickgrenze von {kick}')
-    st.dataframe(df_above_kick)
-with c3:
-    st.markdown(f'### Unter der Kickgrenze von {kick}')
-    st.dataframe(df_below_kick)
-with c4:
-    st.markdown(f'### Ausgeschieden')
-    st.dataframe(df_kicked)
+st.markdown(f'## Ranking')
+st.markdown(f"### Über dem 2-Wochen-Ziel")
+for i in range(len(df['Punkte'])):
+    if df.at[i, 'Punkte'] < goal and plot_goal:
+        plot_goal = False
+        color = 'blue'
+        c1, c2, _, c3 = st.columns([3, 6, 1, 1])
+        with c1:
+            st.markdown(f"### Über der 2-Wochen-Kickgrenze")
+    elif df.at[i, 'Punkte'] < kick and plot_kick:
+        plot_kick = False
+        c1, c2, _, c3 = st.columns([3, 6, 1, 1])
+        color = 'orange'
+        with c1:
+            st.markdown(f"### Unter der 2-Wochen-Kickgrenze")
+    elif df.at[i, 'Punkte'] < kicked and plot_kicked:
+        plot_kicked = False
+        color = 'red'
+        c1, c2, _, c3 = st.columns([3, 6, 1, 1])
+        with c1:
+            st.markdown(f"### Gekickt")
+    _, c1, c2, _, c3 = st.columns([1, 2, 6, 1, 1])
+    with c1:
+        st.markdown(f"#### :{color}[{i+1}. {df.at[i, 'Sportler']}]")
+    with c2:
+        st.progress(float(int(df.at[i, 'Punkte']) / int(df.at[0, 'Punkte'])))  # , text=str(df.at[0, 'Punkte']))
+    with c3:
+        st.markdown(f"### :{color}[{df.at[i, 'Punkte']}]")
+
+# st.divider()
+# st.markdown('## Ranking')
+# c1, c2, c3, c4 = st.columns(4)
+# with c1:
+#     st.markdown(f'### Über dem Zielwert von {goal}')
+#     st.dataframe(df_above_goal)
+# with c2:
+#     st.markdown(f'### Über der Kickgrenze von {kick}')
+#     st.dataframe(df_above_kick)
+# with c3:
+#     st.markdown(f'### Unter der Kickgrenze von {kick}')
+#     st.dataframe(df_below_kick)
+# with c4:
+#     st.markdown(f'### Ausgeschieden')
+#     st.dataframe(df_kicked)
 
 st.divider()
-st.markdown('Daten von 30.06.2024 18:04')
+st.markdown('Daten von 02.07.2024 17:38')
 
