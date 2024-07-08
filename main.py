@@ -46,22 +46,51 @@ st.title('Burpee- und Laufchallenge')
 # plot = plot_soll_kick()
 # st.pyplot(plot.gcf())
 
-kicked = 131
-kick = 269
-goal = 767
 plot_goal = True
 plot_kick = True
+plot_goal_today = True
+plot_kick_today = True
 plot_kicked = True
 color = 'green'
+
+kicked = 131
+
+today = date.today()
+days_of_challenge = (today - date(2024, 6, 16)).days
+today_goal = 10000 / 365 * days_of_challenge
+today_kick = today_goal / (1 + 2 * (date(2025, 6, 16) - today).days / 365)
+
+kick_date = date(2024, 7, 14)
+days_of_challenge = (kick_date - date(2024, 6, 16)).days
+goal = 10000 / 365 * days_of_challenge
+kick = goal / (1 + 2 * (date(2025, 6, 16) - kick_date).days / 365)
+
+st.markdown(f'## Heutiges Ziel')
+c1, c2, c3 = st.columns(3)
+with c1:
+    if today.day < 10:
+        if today.month < 10:
+            st.markdown(f"### 0{today.day}.0{today.month}.{today.year}")
+        else:
+            st.markdown(f"### 0{today.day}.{today.month}.{today.year}")
+    else:
+        if today.month < 10:
+            st.markdown(f"### {today.day}.0{today.month}.{today.year}")
+        else:
+            st.markdown(f"### {today.day}.{today.month}.{today.year}")
+with c2:
+    st.markdown(f"### Zielpunktezahl: {int(round(today_goal))}")
+with c3:
+    st.markdown(f"### Kickgrenze: {int(round(today_kick))}")
 
 st.markdown(f'## Nächster Kick')
 c1, c2, c3 = st.columns(3)
 with c1:
     st.markdown("### 14.07.2024 18:00")
 with c2:
-    st.markdown(f"### Zielpunktezahl: {goal}")
+    st.markdown(f"### Zielpunktezahl: {int(round(goal))}")
 with c3:
-    st.markdown(f"### Kickgrenze: {kick}")
+    st.markdown(f"### Kickgrenze: {int(round(kick))}")
 
 
 df = df_from_whatsapp("_chat.txt")
@@ -94,13 +123,25 @@ for i in range(len(df['Punkte'])):
         color = 'blue'
         c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         with c1:
+            st.markdown(f"### Über dem heutigen Ziel")
+    elif df.at[i, 'Punkte'] < today_goal and plot_goal_today:
+        plot_goal_today = False
+        c1, c2, _, c3 = st.columns([3, 3, 1, 1])
+        color = 'blue'
+        with c1:
             st.markdown(f"### Über der 2-Wochen-Kickgrenze")
     elif df.at[i, 'Punkte'] < kick and plot_kick:
         plot_kick = False
         c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         color = 'orange'
         with c1:
-            st.markdown(f"### Unter der 2-Wochen-Kickgrenze")
+            st.markdown(f"### Über der heutigen Kickgrenze")
+    elif df.at[i, 'Punkte'] < today_kick and plot_kick_today:
+        plot_kick_today = False
+        c1, c2, _, c3 = st.columns([3, 3, 1, 1])
+        color = 'orange'
+        with c1:
+            st.markdown(f"### Unter der heutigen Kickgrenze")
     elif df.at[i, 'Punkte'] < kicked and plot_kicked:
         plot_kicked = False
         color = 'red'
@@ -132,5 +173,5 @@ for i in range(len(df['Punkte'])):
 #     st.dataframe(df_kicked)
 
 st.divider()
-st.markdown('Daten von 02.07.2024 17:38')
+st.markdown('Daten von 08.07.2024 18:54')
 
