@@ -148,11 +148,12 @@ for i in range(len(df['Punkte'])):
         c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         with c1:
             st.markdown(f"### Gekickt")
-    c1, c2, _, c3 = st.columns([3, 3, 1, 1])
+    #  c1, c2, _, c3 = st.columns([3, 3, 1, 1])
+    c1, c3 = st.columns([3, 1])
     with c1:
         st.markdown(f"#### :{color}[{i+1}. {df.at[i, 'Sportler']}]")
-    with c2:
-        st.progress(float(int(df.at[i, 'Punkte']) / int(df.at[0, 'Punkte'])))  # , text=str(df.at[0, 'Punkte']))
+    # with c2:
+    #    st.progress(float(int(df.at[i, 'Punkte']) / int(df.at[0, 'Punkte'])))  # , text=str(df.at[0, 'Punkte']))
     with c3:
         st.markdown(f"### :{color}[{df.at[i, 'Punkte']}]")
 
