@@ -39,7 +39,7 @@ def plot_soll_kick():
     return plt
 
 
-st.set_page_config(page_title='Burpeechallenge', page_icon='burpee.ico', layout="wide")
+st.set_page_config(page_title='Burpeechallenge', page_icon='./burpee.png', layout="wide")
 st.title('Burpee- und Laufchallenge')
 
 
