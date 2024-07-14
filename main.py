@@ -3,7 +3,7 @@ from whatstk import df_from_whatsapp
 import re
 import pandas as pd
 import numpy as np
-from datetime import date
+from datetime import date, timedelta
 import matplotlib.pyplot as plt
 
 
@@ -14,7 +14,7 @@ def remove_emojis_and_tilde(text):
 def plot_soll_kick():
     start_date = pd.to_datetime('2024-06-17')
     end_date = pd.to_datetime('2025-06-16')
-    today = pd.to_datetime(date.today())
+    today_date = pd.to_datetime(date.today())
     total_days = (end_date - start_date).days + 1
     dates = pd.date_range(start=start_date, end=end_date)
     df_plot = pd.DataFrame({'Date': dates})
@@ -27,7 +27,7 @@ def plot_soll_kick():
     plt.plot(df_plot['Date'], df_plot['Kick'], label='Kick', marker='s')
 
     # Markiere den heutigen Tag mit einem vertikalen Strich
-    plt.axvline(x=today, color='r', linestyle='--', linewidth=2, label='Heutiger Tag')
+    plt.axvline(x=today_date, color='r', linestyle='--', linewidth=2, label='Heutiger Tag')
 
     # Beschriftungen und Titel
     plt.xlabel('Datum')
@@ -53,14 +53,16 @@ plot_kick_today = True
 plot_kicked = True
 color = 'green'
 
-kicked = 131
+kicked = 269
 
 today = date.today()
 days_of_challenge = (today - date(2024, 6, 16)).days
 today_goal = 10000 / 365 * days_of_challenge
 today_kick = today_goal / (1 + 2 * (date(2025, 6, 16) - today).days / 365)
 
-kick_date = date(2024, 7, 14)
+kick_date = date(2024, 6, 30)
+while kick_date < today:
+    kick_date += timedelta(days=14)
 days_of_challenge = (kick_date - date(2024, 6, 16)).days
 goal = 10000 / 365 * days_of_challenge
 kick = goal / (1 + 2 * (date(2025, 6, 16) - kick_date).days / 365)
@@ -86,7 +88,16 @@ with c3:
 st.markdown(f'## Nächster Kick')
 c1, c2, c3 = st.columns(3)
 with c1:
-    st.markdown("### 14.07.2024 18:00")
+    if kick_date.day < 10:
+        if kick_date.month < 10:
+            st.markdown(f"### 0{kick_date.day}.0{kick_date.month}.{kick_date.year} 18:00")
+        else:
+            st.markdown(f"### 0{kick_date.day}.{kick_date.month}.{kick_date.year} 18:00")
+    else:
+        if kick_date.month < 10:
+            st.markdown(f"### {kick_date.day}.0{kick_date.month}.{kick_date.year} 18:00")
+        else:
+            st.markdown(f"### {kick_date.day}.{kick_date.month}.{kick_date.year} 18:00")
 with c2:
     st.markdown(f"### Zielpunktezahl: {int(round(goal))}")
 with c3:
@@ -110,6 +121,10 @@ df = df.drop(columns=['date'])
 
 df = df.rename(columns={'username': 'Sportler', 'message': 'Punkte'})
 
+# Frauds
+df = df[df['Sportler'] != 'Reini Puhringer']
+df = df.reset_index(drop=True)
+
 df_above_goal = df[df['Punkte'] >= goal]
 df_above_kick = df[(df['Punkte'] >= kick) & (df['Punkte'] < goal)]
 df_below_kick = df[(df['Punkte'] >= kicked) & (df['Punkte'] < kick)]
@@ -124,31 +139,32 @@ for i in range(len(df['Punkte'])):
         c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         with c1:
             st.markdown(f"### Über dem heutigen Ziel")
-    elif df.at[i, 'Punkte'] < today_goal and plot_goal_today:
+    if df.at[i, 'Punkte'] < today_goal and plot_goal_today:
         plot_goal_today = False
         c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         color = 'blue'
         with c1:
             st.markdown(f"### Über der 2-Wochen-Kickgrenze")
-    elif df.at[i, 'Punkte'] < kick and plot_kick:
+    if df.at[i, 'Punkte'] < kick and plot_kick:
         plot_kick = False
         c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         color = 'orange'
         with c1:
             st.markdown(f"### Über der heutigen Kickgrenze")
-    elif df.at[i, 'Punkte'] < today_kick and plot_kick_today:
+    if df.at[i, 'Punkte'] < today_kick and plot_kick_today:
         plot_kick_today = False
         c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         color = 'orange'
         with c1:
             st.markdown(f"### Unter der heutigen Kickgrenze")
-    elif df.at[i, 'Punkte'] < kicked and plot_kicked:
+    if df.at[i, 'Punkte'] < kicked and plot_kicked:
         plot_kicked = False
         color = 'red'
         c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         with c1:
             st.markdown(f"### Gekickt")
     #  c1, c2, _, c3 = st.columns([3, 3, 1, 1])
+
     c1, c3 = st.columns([3, 1])
     with c1:
         st.markdown(f"#### :{color}[{i+1}. {df.at[i, 'Sportler']}]")
@@ -157,22 +173,6 @@ for i in range(len(df['Punkte'])):
     with c3:
         st.markdown(f"### :{color}[{df.at[i, 'Punkte']}]")
 
-# st.divider()
-# st.markdown('## Ranking')
-# c1, c2, c3, c4 = st.columns(4)
-# with c1:
-#     st.markdown(f'### Über dem Zielwert von {goal}')
-#     st.dataframe(df_above_goal)
-# with c2:
-#     st.markdown(f'### Über der Kickgrenze von {kick}')
-#     st.dataframe(df_above_kick)
-# with c3:
-#     st.markdown(f'### Unter der Kickgrenze von {kick}')
-#     st.dataframe(df_below_kick)
-# with c4:
-#     st.markdown(f'### Ausgeschieden')
-#     st.dataframe(df_kicked)
 
 st.divider()
-st.markdown('Daten von 08.07.2024 18:54')
-
+st.markdown('Daten von 14.07.2024 18:01')
