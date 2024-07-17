@@ -150,7 +150,7 @@ for i in range(len(df['Punkte'])):
         c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         color = 'orange'
         with c1:
-            st.markdown(f"### Über der heutigen Kickgrenze")
+            st.markdown(f"### Unter der 2-Wochen-Kickgrenze")
     if df.at[i, 'Punkte'] < today_kick and plot_kick_today:
         plot_kick_today = False
         c1, c2, _, c3 = st.columns([3, 3, 1, 1])
