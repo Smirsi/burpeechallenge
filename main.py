@@ -136,42 +136,25 @@ for i in range(len(df['Punkte'])):
     if df.at[i, 'Punkte'] < goal and plot_goal:
         plot_goal = False
         color = 'blue'
-        c1, c2, _, c3 = st.columns([3, 3, 1, 1])
-        with c1:
-            st.markdown(f"### Über dem heutigen Ziel")
+        st.markdown(f"### Über dem heutigen Ziel")
     if df.at[i, 'Punkte'] < today_goal and plot_goal_today:
         plot_goal_today = False
-        c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         color = 'blue'
-        with c1:
-            st.markdown(f"### Über der 2-Wochen-Kickgrenze")
+        st.markdown(f"### Über der 2-Wochen-Kickgrenze")
     if df.at[i, 'Punkte'] < kick and plot_kick:
         plot_kick = False
-        c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         color = 'orange'
-        with c1:
-            st.markdown(f"### Unter der 2-Wochen-Kickgrenze")
+        st.markdown(f"### Unter der 2-Wochen-Kickgrenze")
     if df.at[i, 'Punkte'] < today_kick and plot_kick_today:
         plot_kick_today = False
-        c1, c2, _, c3 = st.columns([3, 3, 1, 1])
         color = 'orange'
-        with c1:
-            st.markdown(f"### Unter der heutigen Kickgrenze")
+        st.markdown(f"### Unter der heutigen Kickgrenze")
     if df.at[i, 'Punkte'] < kicked and plot_kicked:
         plot_kicked = False
         color = 'red'
-        c1, c2, _, c3 = st.columns([3, 3, 1, 1])
-        with c1:
-            st.markdown(f"### Gekickt")
-    #  c1, c2, _, c3 = st.columns([3, 3, 1, 1])
+        st.markdown(f"### Gekickt")
 
-    c1, c3 = st.columns([3, 1])
-    with c1:
-        st.markdown(f"#### :{color}[{i+1}. {df.at[i, 'Sportler']}]")
-    # with c2:
-    #    st.progress(float(int(df.at[i, 'Punkte']) / int(df.at[0, 'Punkte'])))  # , text=str(df.at[0, 'Punkte']))
-    with c3:
-        st.markdown(f"### :{color}[{df.at[i, 'Punkte']}]")
+    st.markdown(f"#### :{color}[{i+1}. | {df.at[i, 'Punkte']} | {df.at[i, 'Sportler']}]")
 
 
 st.divider()
