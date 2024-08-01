@@ -2465,8 +2465,8 @@ Vü spaß 😜🤙🏼
 [17.06.24, 09:37:58] Mario Wiesinger: 10
 [17.06.24, 09:50:20] Mario Pfarrhofer: ‎Mario Pfarrhofer hat die Gruppe verlassen.
 [17.06.24, 13:06:06] ~ Max: ‎Valentin Eder hat ~ Max hinzugefügt.
-[17.06.24, 18:19:27] ~ Tobias Pichler: Zählt Radfahrn a?
-[17.06.24, 18:19:43] ~ Tobias Pichler: So 1 km 3 Punkte
+[17.06.24, 18:19:27] Tobias Pichler: Zählt Radfahrn a?
+[17.06.24, 18:19:43] Tobias Pichler: So 1 km 3 Punkte
 [17.06.24, 18:19:56] Reini Pühringer: ich bin für ja
 [17.06.24, 18:22:28] ‪+43 677 61351820‬: ‎Elisabeth Reiter hat ‪+43 677 61351820‬ hinzugefügt. Tippe, um zu ändern, wer weitere Mitglieder hinzufügen kann.
 [17.06.24, 19:14:37] Valentin Eder: 32
@@ -2477,7 +2477,7 @@ Vü spaß 😜🤙🏼
 [17.06.24, 20:19:18] ~ Jakob Reumüller: 30
 [17.06.24, 20:19:46] Tamara Höfer: 30
 [17.06.24, 20:20:06] ~ Julia: 28
-[17.06.24, 20:21:44] ~ Tobias Pichler: 30
+[17.06.24, 20:21:44] Tobias Pichler: 30
 [17.06.24, 20:22:02] ~ Robert Driesnack: 73
 [17.06.24, 20:23:50] Philip: 30
 [17.06.24, 20:39:18] ~ David Reumüller: ‎Valentin Eder hat ~ David Reumüller hinzugefügt.
@@ -2513,7 +2513,7 @@ Vü spaß 😜🤙🏼
 [18.06.24, 15:32:56] Valentin Eder: 200
 [18.06.24, 15:35:29] ~ domi: 60
 [18.06.24, 15:35:43] ~ Alexander Göpperl: Is dir so fad oder? 😂
-‎[18.06.24, 15:43:07] ~ Tobias Pichler: ‎Bild weggelassen
+‎[18.06.24, 15:43:07] Tobias Pichler: ‎Bild weggelassen
 [18.06.24, 17:07:29] ~ Wendy: ‎Valentin Eder hat ~ Wendy hinzugefügt.
 [18.06.24, 17:09:15] ‪+43 650 3753233‬: ‎Mario Wiesinger hat ‪+43 650 3753233‬ hinzugefügt.
 ‎[18.06.24, 17:09:40] Mario Wiesinger: Burpee- und Laufchallenge.pdf • ‎8 Seiten ‎Dokument weggelassen
@@ -2548,7 +2548,7 @@ Vü spaß 😜🤙🏼
 [19.06.24, 21:14:52] ~ Jakob Reumüller: 100
 [19.06.24, 21:18:32] Richi Müsli: 111,3
 [19.06.24, 21:56:24] Christoph Hofer: 230
-[19.06.24, 22:13:00] ~ Tobias Pichler: 60
+[19.06.24, 22:13:00] Tobias Pichler: 60
 [20.06.24, 06:05:31] ~ Florian Leitner: ‎~ Florian Leitner hat die Gruppe verlassen.
 [19.06.24, 23:46:02] ~ Paul: 181
 [20.06.24, 07:40:34] ~ Carina Gstöttner: 150
@@ -2569,8 +2569,8 @@ Vü spaß 😜🤙🏼
 [20.06.24, 21:07:51] Elisabeth Reiter: 129
 [20.06.24, 21:08:52] ~ Alexander Göpperl: 155
 [20.06.24, 21:09:53] ~ Martin: 108
-[20.06.24, 23:11:45] ~ Tobias Pichler: 30
-[21.06.24, 09:57:10] ~ Tobias Pichler: 182
+[20.06.24, 23:11:45] Tobias Pichler: 30
+[21.06.24, 09:57:10] Tobias Pichler: 182
 [21.06.24, 13:05:00] ~ Sophia: 180
 [21.06.24, 15:55:42] ~ Lukas Fidler: 130
 [21.06.24, 16:02:30] Valentin Eder: 430
@@ -2658,7 +2658,7 @@ Vü spaß 😜🤙🏼
 [26.06.24, 20:54:19] ~ Matthias Prechtl: 550
 [26.06.24, 20:54:44] ~ Anna F. Moser: 65 😂😂😂
 [26.06.24, 21:13:22] Reini Pühringer: 318
-[26.06.24, 21:14:39] ~ Tobias Pichler: 284
+[26.06.24, 21:14:39] Tobias Pichler: 284
 [26.06.24, 21:20:31] Elisabeth Reiter: 198
 [26.06.24, 21:25:45] Mathias Huemer: 300
 [26.06.24, 22:32:38] ~ Matthias Ginterseder: 152
@@ -2691,7 +2691,7 @@ Vü spaß 😜🤙🏼
 [28.06.24, 18:32:41] ~ Mathias Bliem: 253
 [28.06.24, 21:15:23] ~ Jakob Reumüller: 205
 [28.06.24, 23:28:18] ~ Paul: 438
-[28.06.24, 23:33:46] ~ Tobias Pichler: 309
+[28.06.24, 23:33:46] Tobias Pichler: 309
 [28.06.24, 23:34:11] Martin Lindorfer: 195
 [29.06.24, 00:09:37] Christoph Scheiblhofer: 266
 ‎[29.06.24, 00:13:37] ~ nadine: ‎Bild weggelassen
@@ -2708,7 +2708,7 @@ Vü spaß 😜🤙🏼
 [29.06.24, 11:41:39] Magda Knogler: 310
 [29.06.24, 13:05:25] ~ Max: Deadline morgen früh oder ist bis 23:59 noch Zeit?
 [29.06.24, 13:10:07] Valentin Eder: 18:00 Sonntags immer alle 2 Wochen
-[29.06.24, 13:19:03] ~ Tobias Pichler: 309
+[29.06.24, 13:19:03] Tobias Pichler: 309
 [29.06.24, 14:28:41] ~ Wendy: 250
 [29.06.24, 14:44:29] ~ Roman: 351
 [30.06.24, 10:25:33] ~ Robert Driesnack: 503
@@ -2880,7 +2880,7 @@ Moch einfoch deine Burpees
 [08.07.24, 18:01:35] ~ Roman: 453
 [08.07.24, 21:10:19] Richi Müsli: 442
 [08.07.24, 22:13:43] Daniela Lindorfer: 670
-[08.07.24, 22:14:02] ~ Tobias Pichler: 345
+[08.07.24, 22:14:02] Tobias Pichler: 345
 [08.07.24, 22:58:21] ~ Maximilian Kallinger: 1095 ‎<Diese Nachricht wurde bearbeitet.>
 [08.07.24, 23:00:19] Mathias Huemer: 600
 [09.07.24, 21:19:15] Felix Schwerzler: ‎Felix Schwerzler hat die Gruppe verlassen.
@@ -2892,7 +2892,7 @@ Moch einfoch deine Burpees
 [10.07.24, 17:54:31] Valentin Eder: 658 is soll heute
 [10.07.24, 18:53:18] ~ Carina: 326
 [10.07.24, 19:14:21] ~ Franzi: 1000
-[10.07.24, 19:18:53] ~ Tobias Pichler: 10 000 in 365 Tagen ned in 240😯
+[10.07.24, 19:18:53] Tobias Pichler: 10 000 in 365 Tagen ned in 240😯
 [10.07.24, 20:07:09] Martin Lindorfer: 315
 [10.07.24, 20:35:29] ~ jördis: 701
 [11.07.24, 00:52:38] Paul Schmidt: 369
@@ -2932,7 +2932,7 @@ Moch einfoch deine Burpees
 [14.07.24, 12:25:21] ~ Achim Kronbichler: 439
 [14.07.24, 15:10:14] ~ Mathias: 420
 [14.07.24, 15:11:51] ~ Jakob Reumüller: 280
-[14.07.24, 15:12:45] ~ Tobias Pichler: 405
+[14.07.24, 15:12:45] Tobias Pichler: 405
 [14.07.24, 15:32:07] ~ David Reumüller: 280
 [14.07.24, 17:25:07] ~ Hannah☺️: 400
 [14.07.24, 17:33:49] ~ Matthias Ginterseder: 287
@@ -3035,7 +3035,7 @@ Moch einfoch deine Burpees
 [26.07.24, 18:13:27] Norbert Gattringer: 1300
 [26.07.24, 18:51:48] Christoph Scheiblhofer: 800
 [27.07.24, 08:48:03] ~ nadine: kann bitte nurmoi wer des pdf schicken? 💗
-‎[27.07.24, 08:49:42] ~ Tobias Pichler: Burpee- und Laufchallenge.pdf • ‎8 Seiten ‎Dokument weggelassen
+‎[27.07.24, 08:49:42] Tobias Pichler: Burpee- und Laufchallenge.pdf • ‎8 Seiten ‎Dokument weggelassen
 [27.07.24, 08:50:16] ~ nadine: danke!✨
 [27.07.24, 09:39:59] ~ nadine: 1050
 [27.07.24, 10:41:54] Simone Grims: 570
@@ -3059,3 +3059,29 @@ Moch einfoch deine Burpees
 [29.07.24, 15:42:46] Norbert Gattringer: 1350
 [29.07.24, 18:42:14] Daniela Lindorfer: 1440
 [29.07.24, 18:45:23] ~ Franzi: 1800
+[29.07.24, 19:00:35] ~ Jakob Reumüller: ‎Du hast ~ Jakob Reumüller entfernt.
+[29.07.24, 19:00:41] ~ David Reumüller: ‎Du hast ~ David Reumüller entfernt.
+[29.07.24, 19:01:17] ~ Lukas Fidler: ‎Du hast ~ Lukas Fidler entfernt.
+[29.07.24, 19:01:23] ~ Max: ‎Du hast ~ Max entfernt.
+[29.07.24, 19:01:26] Mathilda Rittsteiger: 873
+[29.07.24, 19:01:31] ~ Matthias Ginterseder: ‎Du hast ~ Matthias Ginterseder entfernt.
+[29.07.24, 19:02:38] ~ Michael Hofer: ‎Du hast ~ Michael Hofer entfernt.
+[29.07.24, 19:02:46] Tobias Pichler: ‎Du hast Tobias Pichler entfernt.
+[29.07.24, 19:02:52] ~ Carina: ‎Du hast ~ Carina entfernt.
+[29.07.24, 19:07:55] ~ Matthias Prechtl: 800
+[29.07.24, 19:10:58] ~ jördis: 1253
+[29.07.24, 19:25:38] ~ Sophia: 1200
+[29.07.24, 19:28:53] ~ Hannah☺️: 650
+[29.07.24, 20:08:37] Christoph Hofer: 1200
+[30.07.24, 02:10:22] Mathias Huemer: 900
+[30.07.24, 10:22:11] Tobias Pichler: ‎Du hast Tobias Pichler hinzugefügt.
+[30.07.24, 10:22:30] Tobias Pichler: 425
+[31.07.24, 08:40:08] Simone Grims: 745
+[31.07.24, 08:51:10] Daniela Lindorfer: 1540
+[31.07.24, 09:08:50] Christoph Scheiblhofer: 883
+[31.07.24, 09:27:55] ~ Eva: 1285
+[31.07.24, 09:31:58] Daniel Kneidinger: 1090
+[31.07.24, 14:06:02] ~ jördis: 1304
+[31.07.24, 17:36:46] ~ Roman: 840
+[31.07.24, 20:09:07] Norbert Gattringer: 1650
+[01.08.24, 07:33:22] ~ jördis: 1357
