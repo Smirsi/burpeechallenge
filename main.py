@@ -158,4 +158,4 @@ for i in range(len(df['Punkte'])):
 
 
 st.divider()
-st.markdown('Daten von 08.08.2024 17:31')
+st.markdown('Daten von 08.08.2024 17:32')
