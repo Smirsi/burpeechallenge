@@ -53,7 +53,7 @@ plot_kick_today = True
 plot_kicked = True
 color = 'green'
 
-kicked = 2470
+kicked = 2788
 
 today = date.today()
 days_of_challenge = (today - date(2024, 6, 16)).days
@@ -158,4 +158,4 @@ for i in range(len(df['Punkte'])):
 
 
 st.divider()
-st.markdown('Daten von 15.12.2024 18:34')
+st.markdown('Daten von 29.12.2024 18:00')
