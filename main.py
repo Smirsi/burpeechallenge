@@ -54,7 +54,7 @@ plot_kick_today = True
 plot_kicked = True
 color = 'gold'
 
-kicked = 3845
+kicked = 4000
 
 today = date.today()
 days_of_challenge = (today - date(2024, 6, 16)).days
