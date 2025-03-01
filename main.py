@@ -52,7 +52,7 @@ plot_kick = True
 plot_goal_today = True
 plot_kick_today = True
 plot_kicked = True
-color = 'purple'
+color = 'violet'
 
 kicked = 4000
 
