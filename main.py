@@ -52,7 +52,7 @@ plot_kick = True
 plot_goal_today = True
 plot_kick_today = True
 plot_kicked = True
-color = 'gold'
+color = 'purple'
 
 kicked = 4000
 
@@ -134,7 +134,7 @@ st.divider()
 st.markdown(f'## Ranking')
 st.markdown(f"### Challenge completed")
 for i in range(len(df['Punkte'])):
-    if df.at[i, 'Punkte'] < goal and plot_done:
+    if df.at[i, 'Punkte'] < 10000 and plot_done:
         plot_done = False
         color = 'green'
         st.markdown(f"### Über dem 2-Wochen-Ziel")
