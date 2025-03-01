@@ -46,12 +46,13 @@ st.title('Burpee- und Laufchallenge')
 # plot = plot_soll_kick()
 # st.pyplot(plot.gcf())
 
+plot_done = True
 plot_goal = True
 plot_kick = True
 plot_goal_today = True
 plot_kick_today = True
 plot_kicked = True
-color = 'green'
+color = 'gold'
 
 kicked = 3845
 
@@ -131,8 +132,12 @@ df_below_kick = df[(df['Punkte'] >= kicked) & (df['Punkte'] < kick)]
 df_kicked = df[df['Punkte'] < kicked]
 st.divider()
 st.markdown(f'## Ranking')
-st.markdown(f"### Über dem 2-Wochen-Ziel")
+st.markdown(f"### Challenge completed")
 for i in range(len(df['Punkte'])):
+    if df.at[i, 'Punkte'] < goal and plot_done:
+        plot_done = False
+        color = 'green'
+        st.markdown(f"### Über dem 2-Wochen-Ziel")
     if df.at[i, 'Punkte'] < goal and plot_goal:
         plot_goal = False
         color = 'blue'
@@ -158,4 +163,4 @@ for i in range(len(df['Punkte'])):
 
 
 st.divider()
-st.markdown('Daten von 09.02.2025 18:05')
+st.markdown('Daten von 01.03.2025 10:34')
