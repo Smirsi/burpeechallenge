@@ -132,9 +132,9 @@ df_below_kick = df[(df['Punkte'] >= kicked) & (df['Punkte'] < kick)]
 df_kicked = df[df['Punkte'] < kicked]
 st.divider()
 st.markdown(f'## Ranking')
-st.markdown(f"### Challenge completed")
+st.markdown(f"### Challenge Completed")
 for i in range(len(df['Punkte'])):
-    if df.at[i, 'Punkte'] < 10000 and plot_done:
+    if df.at[i, 'Punkte'] < 9000 and plot_done:
         plot_done = False
         color = 'green'
         st.markdown(f"### Über dem 2-Wochen-Ziel")
