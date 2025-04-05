@@ -124,6 +124,7 @@ df = df.rename(columns={'username': 'Sportler', 'message': 'Punkte'})
 
 # Frauds
 df = df[df['Sportler'] != 'Reini Puhringer']
+df = df[df['Sportler'] != 'Mario Wiesinger']  # 145
 df = df.reset_index(drop=True)
 
 df_above_goal = df[df['Punkte'] >= goal]
@@ -163,4 +164,4 @@ for i in range(len(df['Punkte'])):
 
 
 st.divider()
-st.markdown('Daten von 24.03.2025 19:34')
+st.markdown('Daten von 05.04.2025 12:24')
