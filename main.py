@@ -160,7 +160,7 @@ for i in range(len(df['Punkte'])):
         color = 'red'
         st.markdown(f"### Gekickt")
 
-    if df.at[i, 'Sportler'] in ['Valentin Eder', 'Norbert Gattringer', 'Philip', 'Tamara Höfer', 'Christoph Hofer']:
+    if df.at[i, 'Sportler'] in ['Valentin Eder', 'Norbert Gattringer', 'Philip', 'Tamara Hofer', 'Christoph Hofer']:
         df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🥇'
     if df.at[i, 'Punkte'] >= 10000:
         df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🥇'
