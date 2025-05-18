@@ -397,7 +397,7 @@ Gesamt: 154
 [21.06.23, 21:24:45] Lukas Lindorfer 4️⃣0️⃣🃏: 655
 [21.06.23, 21:40:24] Magda Knogler: 530
 [21.06.23, 22:06:19] Valentin Eder: 635
-[22.06.23, 08:41:42] Philip: 510
+[22.06.23, 08:41:43] Philip: 510
 [22.06.23, 10:36:25] Lukas Lindorfer 4️⃣0️⃣🃏: 690
 [22.06.23, 20:01:45] Martin Reiter: 380
 [22.06.23, 20:09:33] Egon Reiter: 164
@@ -1430,7 +1430,7 @@ challenge @436642396946 wer schafft als erster 6k
 [09.11.23, 18:05:00] Valentin Eder: 4550
 [09.11.23, 22:31:25] Magda Knogler: 4170
 [10.11.23, 14:23:13] Valentin Eder: 4600
-[10.11.23, 14:28:46] Philip: 3360
+[10.11.23, 14:28:47] Philip: 3360
 [10.11.23, 14:31:15] Lukas Lindorfer 4️⃣0️⃣🃏: 4720
 [10.11.23, 18:07:25] Norbert Gattringer: 4250
 [10.11.23, 21:32:51] Magda Knogler: 4205
@@ -1659,7 +1659,7 @@ Michi
 [25.12.23, 11:43:33] ~ Mathias Bliem: ‎Valentin Eder hat ~ Mathias Bliem entfernt.
 [25.12.23, 21:45:28] Philip: 4300
 [26.12.23, 10:44:55] Rainer Binder: 6360
-[26.12.23, 19:04:04] Philip: 4380
+[26.12.23, 19:04:05] Philip: 4380
 [26.12.23, 19:07:45] ~ D. S.: 2970
 [27.12.23, 14:29:08] Norbert Gattringer: 5600
 [27.12.23, 15:40:37] Tamara Höfer: 5400
@@ -1848,7 +1848,7 @@ Kiste Bier wer als letzter 8000 hat?
 [16.02.24, 08:52:16] Rainer Binder: bin seit 14 Tagen a Influencer 🤒🤯 i zerstör euch sobald i wieder gesund bin !
 [16.02.24, 09:11:01] Christoph Hofer: Sorry hahah
 [16.02.24, 09:11:14] Christoph Hofer: 7300
-[16.02.24, 10:03:07] Philip: 6440
+[16.02.24, 10:03:08] Philip: 6440
 [16.02.24, 10:36:45] Norbert Gattringer: Bin grad auf Football Trainingslager in da Tschechei und i hätt nu ka Möglichkeit gefunden:(
 [17.02.24, 10:23:18] Lukas Lindorfer 4️⃣0️⃣🃏: 7300
 [17.02.24, 10:47:10] Norbert Gattringer: 7000
@@ -2056,7 +2056,7 @@ Nächste Woche bin i wieder voi do
 [16.04.24, 14:40:26] Norbert Gattringer: 8770
 [16.04.24, 16:23:03] Tamara Höfer: 8860
 [16.04.24, 19:16:45] Lukas Lindorfer 4️⃣0️⃣🃏: 8632
-[16.04.24, 21:02:32] Philip: 8035
+[16.04.24, 21:02:33] Philip: 8035
 [17.04.24, 17:06:01] Norbert Gattringer: 8900
 [17.04.24, 17:06:46] Norbert Gattringer: @436503234395 wo bleibst?
 [17.04.24, 17:10:56] Valentin Eder: woa krank
@@ -2095,7 +2095,7 @@ Nächste Woche bin i wieder voi do
 [19.04.24, 21:29:02] Rainer Binder: 8700
 [19.04.24, 23:16:53] Valentin Eder: 9230
 [19.04.24, 23:55:57] Tamara Höfer: Brems di ei🤦🏻‍♀️
-[20.04.24, 18:38:11] Philip: 8200
+[20.04.24, 18:38:12] Philip: 8200
 [20.04.24, 18:40:36] Valentin Eder: kickgrenze is dann a bald scho bei 7200
 [20.04.24, 18:40:41] Valentin Eder: am schluss wirds eng
 [20.04.24, 18:50:34] Tamara Höfer: 9000
@@ -2410,7 +2410,7 @@ de müssen dann hald bis 31. Juni 131 Punkte haben sonst werdens wieder rausgeha
 [15.06.24, 13:34:14] Burpee- und Laufchallenge: ‎Lukas Lindorfer 4️⃣0️⃣🃏 hat Daniel Kneidinger, Daniela Lindorfer und 15 weitere Personen hinzugefügt. Tippe, um alle zu sehen.
 [15.06.24, 13:34:38] Lukas Lindorfer 4️⃣0️⃣🃏: Na jz chill biss das olle dabei sein
 [15.06.24, 13:34:51] Valentin Eder: ok dann ab Montag
-[15.06.24, 13:35:49] Burpee- und Laufchallenge: ‎Du hast die Gruppenbeschreibung geändert.
+[15.06.24, 13:35:50] Burpee- und Laufchallenge: ‎Du hast die Gruppenbeschreibung geändert.
 [15.06.24, 13:36:57] Valentin Eder: ‎Valentin Eder hat die Gruppenbeschreibung geändert.
 [15.06.24, 13:42:08] Burpee- und Laufchallenge: ‎Valentin Eder hat Alexander Willnauer, Egon Reiter und 15 weitere Personen hinzugefügt. Tippe, um alle zu sehen.
 [15.06.24, 14:11:23] Tobias Weixelbaumer: wie ist Laufen definiert? 😅 Mindest-Pace? nicht das wer beim Wandern mittrackt 🫣
@@ -3383,7 +3383,7 @@ Moch einfoch deine Burpees
 [06.10.24, 19:44:09] Paul Schmidt: 2066
 [07.10.24, 09:25:13] Richi Müsli: 1846
 [07.10.24, 11:18:35] ~ Eva: 2260
-[09.10.24, 18:11:39] Philip: 1500
+[09.10.24, 18:11:40] Philip: 1500
 [09.10.24, 19:00:57] Daniela Lindorfer: 2800
 [09.10.24, 21:22:57] Tobias Pichler: 1550
 [09.10.24, 21:59:24] Christoph Scheiblhofer: 1878
@@ -3539,7 +3539,7 @@ Moch einfoch deine Burpees
 [01.12.24, 10:53:18] ~ Robert Driesnack: 2961
 [01.12.24, 14:39:33] ~ Carina Gstöttner: 4700
 [01.12.24, 18:17:44] Christoph Hofer: ‎Christoph Hofer hat die Gruppe verlassen.
-[01.12.24, 18:17:53] Tobias Pichler: ‎Tobias Pichler hat die Gruppe verlassen.
+[01.12.24, 18:17:54] Tobias Pichler: ‎Tobias Pichler hat die Gruppe verlassen.
 [01.12.24, 18:18:07] ~ jördis: ‎~ jördis hat die Gruppe verlassen.
 [01.12.24, 18:18:17] ~ Maximilian Kallinger: ‎~ Maximilian Kallinger hat die Gruppe verlassen.
 [05.12.24, 18:37:26] Norbert Gattringer: 3500
@@ -3734,7 +3734,7 @@ Zielpunktezahl: 5973
 [14.02.25, 21:00:11] Norbert Gattringer: 5850
 [15.02.25, 08:28:25] Simon Paireder: 8700
 [15.02.25, 13:09:49] Valentin Eder: 6900
-[16.02.25, 19:56:36] Philip: 5400
+[16.02.25, 19:56:37] Philip: 5400
 [17.02.25, 07:03:15] ~ Carina Gstöttner: 6900
 [18.02.25, 17:51:43] ~ Eva: 5520
 [19.02.25, 18:27:03] ~ Franzi: 7020
@@ -3808,7 +3808,7 @@ Zielpunktezahl: 5973
 [24.03.25, 07:00:19] ~ Carina Gstöttner: 8100
 [25.03.25, 12:37:45] Norbert Gattringer: 6600
 [25.03.25, 13:50:33] Daniela Lindorfer: 7500
-[26.03.25, 19:24:54] Valentin Eder: ‎Valentin Eder hat eine Nachricht fixiert.
+[26.03.25, 19:24:55] Valentin Eder: ‎Valentin Eder hat eine Nachricht fixiert.
 [26.03.25, 20:42:45] Norbert Gattringer: 6800
 [26.03.25, 20:44:48] Valentin Eder: 8080
 [26.03.25, 21:00:47] ~ Mathias: 8529
@@ -3844,7 +3844,7 @@ Zielpunktezahl: 5973
 [13.04.25, 16:41:42] ~ Franzi: 9200
 [13.04.25, 22:16:21] ~ Eva: 8520
 [14.04.25, 07:01:48] ~ Carina Gstöttner: 8800
-[14.04.25, 08:00:09] Philip: 6860
+[14.04.25, 08:00:10] Philip: 6860
 [15.04.25, 17:30:01] Philip: 7000
 [22.04.25, 18:13:16] Valentin Eder: 8840
 [23.04.25, 21:21:15] Valentin Eder: 8870
@@ -3866,7 +3866,7 @@ Zielpunktezahl: 5973
 [01.05.25, 16:54:37] Paul Schmidt: 8666
 [02.05.25, 15:44:45] Philip: 7270
 [02.05.25, 20:44:52] ~ Mathias: 9960
-[03.05.25, 18:18:07] Philip: 7370
+[03.05.25, 18:18:08] Philip: 7370
 [03.05.25, 20:12:41] Mario Pisslinger: 9200
 [03.05.25, 21:14:03] ~ Franzi: 10000
 [04.05.25, 12:31:48] Norbert Gattringer: Ich muss leider aufgeben 🥺
@@ -3887,3 +3887,14 @@ Zielpunktezahl: 5973
 [10.05.25, 20:21:15] Paul Schmidt: 9033
 [10.05.25, 21:28:07] Philip: 8000
 [12.05.25, 19:41:30] Philip: 8200
+[14.05.25, 06:55:51] ~ Carina Gstöttner: 9700
+[14.05.25, 10:40:36] Valentin Eder: nice
+[14.05.25, 17:26:06] Valentin Eder: 9600
+[16.05.25, 15:19:48] Valentin Eder: 9700
+[16.05.25, 15:20:12] Valentin Eder: nd aufgeben :o
+[16.05.25, 15:23:59] ~ Eva: 9565
+[16.05.25, 17:28:10] Philip: Jojo chü
+[18.05.25, 17:29:08] Philip: 8250
+[18.05.25, 17:33:12] Paul Schmidt: 9392
+[18.05.25, 19:00:22] Norbert Gattringer: ‎Norbert Gattringer hat die Gruppe verlassen.
+[18.05.25, 19:00:27] Daniela Lindorfer: ‎Daniela Lindorfer hat die Gruppe verlassen.
