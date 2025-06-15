@@ -41,11 +41,11 @@ plot_kick_today = True
 plot_kicked = True
 color = 'violet'
 
-date_start = date(2024, 6, 23)
+date_start = date(2025, 6, 23)
 date_end = date_start + timedelta(days=365)
 date_today = date.today()
 days_of_challenge = (date_today - date_start).days
-total_points_goal = 10000
+total_points_goal = 26547
 
 kick_date = date_start + timedelta(days=14)
 while kick_date < date_today:
