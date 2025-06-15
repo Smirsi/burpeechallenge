@@ -60,6 +60,7 @@ df['date'] = pd.to_datetime(df['date'])
 df = df[df['date'] >= '2024-06-15']
 df['message'] = df['message'].apply(remove_emojis_and_tilde)
 df['username'] = df['username'].apply(remove_emojis_and_tilde)
+df['username'] = df['username'].str.strip()
 df = df[df['message'].str.isdigit()]
 df['message'] = df['message'].astype(int)
 df = df[df['message'] <= 11000]
@@ -124,10 +125,15 @@ for i in range(len(df['Punkte'])):
         c[4].markdown(f"#### Gekickt")
         ci = 4
 
-    if df.at[i, 'Sportler'] in ['Valentin Eder', 'Norbert Gattringer', 'Philip', 'Tamara Hofer', 'Christoph Hofer']:
+    print(df.at[i, 'Sportler'])
+    # Double winners (2024, 2025)
+    if df.at[i, 'Sportler'] in ['Valentin Eder', 'Philip']:
+        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🥇🥇'
+    # Winners 2024
+    if df.at[i, 'Sportler'] in ['Norbert Gattringer', 'Tamara Hofer', 'Christoph Hofer']:
         df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🥇'
-    if df.at[i, 'Sportler'] in ['Valentin Eder', 'Philip', 'Carina Gstottner', 'Franzi', 'Mathias', 'Paul Schmidt',
-                                'Simon Paireder', 'Eva']:
+    # Winners 2025
+    if df.at[i, 'Sportler'] in ['Carina Gstottner', 'Franzi', 'Mathias', 'Paul Schmidt', 'Simon Paireder', 'Eva']:
         df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🥇'
     c[ci].markdown(f"##### :{color}[{i + 1}. | {df.at[i, 'Punkte']} | {df.at[i, 'Sportler']}]")
 
