@@ -1,6 +1,4 @@
-streamlit
-pandas
-whatstk
-numpy
-matplotlib
-plotly
+streamlit~=1.45.1
+pandas~=2.2.2
+whatstk~=0.7.1
+plotly~=6.1.2
