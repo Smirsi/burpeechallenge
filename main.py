@@ -1,5 +1,4 @@
 import streamlit as st
-from whatstk import df_from_whatsapp
 import re
 import pandas as pd
 from datetime import date, timedelta
@@ -8,6 +7,25 @@ import plotly.graph_objs as go
 
 def remove_emojis_and_tilde(text):
     return re.sub(r'[^\w\s,]', '', text)
+
+
+def df_from_whatsapp(filename):
+    """Parst einen WhatsApp-Chat aus einer Textdatei in ein DataFrame."""
+    import re
+    import pandas as pd
+
+    pattern = r'\[(.*?)\] (.*?): (.*)'
+    messages = []
+
+    with open(filename, encoding='utf-8') as f:
+        for line in f:
+            match = re.match(pattern, line)
+            if match:
+                datetime_str, sender, message = match.groups()
+                messages.append([datetime_str, sender, message])
+
+    df_whatsapp = pd.DataFrame(messages, columns=['date', 'username', 'message'])
+    return df_whatsapp
 
 
 st.set_page_config(page_title='Triple-Everest', page_icon='everest.ico', layout="wide")
