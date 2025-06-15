@@ -4,6 +4,7 @@ import re
 import pandas as pd
 from datetime import date, timedelta
 import plotly.graph_objs as go
+import sqlite3
 
 
 def remove_emojis_and_tilde(text):
@@ -40,7 +41,7 @@ plot_kick_today = True
 plot_kicked = True
 color = 'violet'
 
-date_start = date(2024, 6, 16)
+date_start = date(2024, 6, 23)
 date_end = date_start + timedelta(days=365)
 date_today = date.today()
 days_of_challenge = (date_today - date_start).days
@@ -76,19 +77,40 @@ st.divider()
 # Get DATA
 df = df_from_whatsapp("_chat.txt")
 df['date'] = pd.to_datetime(df['date'])
-df = df[df['date'] >= '2024-06-15']
+df = df[df['date'] >= '2025-06-23']
 df['message'] = df['message'].apply(remove_emojis_and_tilde)
 df['username'] = df['username'].apply(remove_emojis_and_tilde)
 df['username'] = df['username'].str.strip()
 df = df[df['message'].str.isdigit()]
 df['message'] = df['message'].astype(int)
-df = df[df['message'] <= 11000]
+df = df[df['message'] <= 27000]
 df = df.rename(columns={'username': 'Sportler', 'message': 'Punkte', 'date': 'Datum'})
 
 # Frauds
-df = df[df['Sportler'] != 'Reini Puhringer']
-df = df[df['Sportler'] != 'Mario Wiesinger']  # 145
-df = df.reset_index(drop=True)
+# df = df[df['Sportler'] != 'Reini Puhringer']
+# df = df[df['Sportler'] != 'Mario Wiesinger']  # 145
+# df = df.reset_index(drop=True)
+
+# # Nachrichten aus SQLite holen
+# conn = sqlite3.connect('messages.sqlite')
+# df_wa = pd.read_sql('SELECT * FROM messages', conn)
+# conn.close()
+#
+# # Filtern, damit nur Nachrichten, die aus einer Zahl bestehen, drin sind
+# df_wa = df_wa.copy()
+# df_wa['message'] = df_wa['message'].str.strip()
+# df_wa = df_wa[df_wa['message'].str.isdigit()]
+# df_wa['message'] = df_wa['message'].astype(int)
+#
+# # Spalten passend machen
+# df_wa = df_wa.copy()
+# df_wa = df_wa.rename(columns={'sender': 'Sportler', 'message': 'Punkte', 'timestamp': 'Datum'})
+# df_wa['Datum'] = pd.to_datetime(df_wa['Datum'])
+#
+# # vorhandenen Datensatz mit WhatsApp-Datensatz zusammenfügen
+# df = pd.concat([df_file[['Sportler', 'Punkte', 'Datum']],
+#                 df_wa[['Sportler', 'Punkte', 'Datum']]],
+#                ignore_index=True)
 
 # Top 10 User bestimmen
 topX_number = 10
@@ -147,13 +169,13 @@ for i in range(len(df['Punkte'])):
     print(df.at[i, 'Sportler'])
     # Double winners (2024, 2025)
     if df.at[i, 'Sportler'] in ['Valentin Eder', 'Philip']:
-        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🥇🥇'
+        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🏆🏆'
     # Winners 2024
     if df.at[i, 'Sportler'] in ['Norbert Gattringer', 'Tamara Hofer', 'Christoph Hofer']:
-        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🥇'
+        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🏆'
     # Winners 2025
     if df.at[i, 'Sportler'] in ['Carina Gstottner', 'Franzi', 'Mathias', 'Paul Schmidt', 'Simon Paireder', 'Eva']:
-        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🥇'
+        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🏆'
     c[ci].markdown(f"##### :{color}[{i + 1}. | {df.at[i, 'Punkte']} | {df.at[i, 'Sportler']}]")
 
 st.divider()
