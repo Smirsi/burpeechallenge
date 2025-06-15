@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 from datetime import date, timedelta
 import matplotlib.pyplot as plt
+import plotly.graph_objs as go
 
 
 def remove_emojis_and_tilde(text):
@@ -113,19 +114,42 @@ df['message'] = df['message'].apply(remove_emojis_and_tilde)
 df['username'] = df['username'].apply(remove_emojis_and_tilde)
 df = df[df['message'].str.isdigit()]
 df['message'] = df['message'].astype(int)
-df = df.sort_values('date').drop_duplicates('username', keep='last')
-df = df.sort_values('message', ascending=False)
-
-
-df = df.reset_index(drop=True)
-df = df.drop(columns=['date'])
-
 df = df.rename(columns={'username': 'Sportler', 'message': 'Punkte'})
 
 # Frauds
 df = df[df['Sportler'] != 'Reini Puhringer']
 df = df[df['Sportler'] != 'Mario Wiesinger']  # 145
 df = df.reset_index(drop=True)
+
+# Plot the top 30 persons
+final_punkte = df.sort_values(['Sportler', 'Datum']).groupby('Sportler').tail(1)
+top30 = final_punkte.sort_values('Punkte', ascending=False).head(30)['Sportler'].tolist()
+top_df = df[df['Sportler'].isin(top30)].sort_values(['Sportler', 'date'])
+fig = go.Figure()
+
+for user, group in top_df.groupby('Sportler'):
+    fig.add_trace(go.Scatter(
+        x=group['date'],
+        y=group['Punkte'],
+        mode='lines+markers',
+        name=user
+    ))
+
+fig.update_layout(
+    title='Verlauf der Punkte für Top 30 User',
+    xaxis_title='Datum',
+    yaxis_title='Punkte',
+    hovermode='x unified'
+)
+
+# Streamlit-Darstellung
+st.plotly_chart(fig, use_container_width=True)
+
+# Write all personen down in a list
+df = df.sort_values('date').drop_duplicates('username', keep='last')
+df = df.sort_values('message', ascending=False)
+df = df.reset_index(drop=True)
+df = df.drop(columns=['date'])
 
 df_above_goal = df[df['Punkte'] >= goal]
 df_above_kick = df[(df['Punkte'] >= kick) & (df['Punkte'] < goal)]
@@ -168,4 +192,4 @@ for i in range(len(df['Punkte'])):
 
 
 st.divider()
-st.markdown('Daten von 08.06.2025 10:36')
+st.markdown('Daten von 15.06.2025 10:09')
