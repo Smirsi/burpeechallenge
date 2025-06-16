@@ -11,27 +11,49 @@ def remove_emojis_and_tilde(text):
     return re.sub(r'[^\w\s,]', '', text)
 
 
-# def df_from_whatsapp(filename):
-#     """Parst einen WhatsApp-Chat aus einer Textdatei in ein DataFrame."""
-#     import re
-#     import pandas as pd
-#
-#     pattern = r'\[(.*?)\] (.*?): (.*)'
-#     messages = []
-#
-#     with open(filename, encoding='utf-8') as f:
-#         for line in f:
-#             match = re.match(pattern, line)
-#             if match:
-#                 datetime_str, sender, message = match.groups()
-#                 messages.append([datetime_str, sender, message])
-#
-#     df_whatsapp = pd.DataFrame(messages, columns=['date', 'username', 'message'])
-#     return df_whatsapp
+def rules():
+    st.markdown("""
+    #### 🏔 Ziel  
+    Innerhalb von **einem Jahr** (23.06.2025–22.06.2026) **müssen 26.547 Punkte** gesammelt werden.  
+
+    ---
+
+    #### 🌟 Was zählt als Punkte?
+
+    ✅ **Höhenmeter** (egal, welchen Sport du ausübst — jedoch muss dieser **unmotorisiert** sein, außerdem zählen 
+    nur **positive** Höhenmeter (nach oben)).  
+    ➡ 1 positiver Höhenmeter = 1 Punkt  
+
+    ✅ **Stockwerke** (auf deinem Handy gemessen) werden mit 3 multipliziert.  
+    ➡ 1 Stockwerk = 3 Punkte  
+
+    ✅ **Klimmzüge:**  
+    ➥ Männer: 1 Klimmzug = 1 Punkt  
+    ➥ Frauen: 1 Klimmzug = 3 Punkte (ein Widerstandsband darf bei Bedarf verwendet werden)
+
+    ---
+
+    #### ⏱ Kickgrenze
+
+    ✅ Alle 2 Wochen (Sonntag 18:00) werden Personen gekickt, die unter der jeweils aktuellen Kickgrenze liegen.  
+
+    ✅ Die **Zielgrenze** wächst **linear** von 0 auf 26.547 im Laufe eines Jahres.  
+
+    ✅ Die **Kickgrenze** ist **nichtlinear**:
+    
+    $Kickgrenze = \dfrac{Zielgrenze}{1 + 2 * \dfrac{(Enddatum - Kickdatum)}{365}}$
+
+    ---
+
+    🚀 Sei dabei, gib Gas und erreiche den Gipfel!  
+    """)
 
 
 st.set_page_config(page_title='Triple-Everest', page_icon='everest.ico', layout="wide")
-st.title('Triple-Everest Challenge')
+st.title('🏔 Triple-Everest Challenge 🏔')
+
+with st.expander("Regeln", expanded=False):
+    rules()
 
 plot_done = True
 plot_goal = True
