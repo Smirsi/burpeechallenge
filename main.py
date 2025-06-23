@@ -37,9 +37,6 @@ def rules():
     nur **positive** Höhenmeter (nach oben)).  
     ➥ 1 positiver Höhenmeter = 1 Punkt  
 
-    ✅ **Stockwerke** (auf deinem Handy gemessen) werden mit 3 multipliziert.  
-    ➥ 1 Stockwerk = 3 Punkte  
-
     ✅ **Klimmzüge:**  
     ➥ Männer: 1 Klimmzug = 1 Punkt  
     ➥ Frauen: 1 Klimmzug = 3 Punkte (ein Widerstandsband darf bei Bedarf verwendet werden)
@@ -113,9 +110,9 @@ st.divider()
 
 # Get DATA
 # Ordner für TXT-Dateien
-profiles_dir = 'chat'
-if not os.path.exists(profiles_dir):
-    os.makedirs(profiles_dir)
+profiles_dir = './'
+# if not os.path.exists(profiles_dir):
+#    os.makedirs(profiles_dir)
     
 file_path = os.path.join(profiles_dir, "_chat.txt")
 
