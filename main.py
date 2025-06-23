@@ -13,7 +13,7 @@ def update_data_file():
     save_path = os.path.join(os.getcwd(), "_chat.txt")  # oder ein anderer Pfad
     file = st.file_uploader('Datei auswählen', type=['.txt'], accept_multiple_files=False)
     pw = st.text_input('Passwort')
-    if st.button("Daten updaten", type="primary", use_container_width=True) and pw == "hogi" and file is not None:
+    if st.button("File hochladen", type="primary", use_container_width=True) and pw == "hogi" and file is not None:
         with open(save_path, "wb") as f:
             f.write(file.getbuffer())
         
