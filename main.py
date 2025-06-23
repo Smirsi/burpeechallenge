@@ -9,13 +9,13 @@ import os
 
 
 @st.dialog('Daten updaten')
-def update_data_file():
-    save_path = os.path.join(os.getcwd(), "_chat.txt")  # oder ein anderer Pfad
-    save_path = "_chat.txt"
+def update_data_file(path):
+    # save_path = os.path.join(os.getcwd(), "_chat.txt")  # oder ein anderer Pfad
+    # save_path = "_chat.txt"
     file = st.file_uploader('Datei auswählen', type=['.txt'], accept_multiple_files=False)
     pw = st.text_input('Passwort')
     if st.button("File hochladen", type="primary", use_container_width=True) and pw == "hogi" and file is not None:
-        with open(save_path, "wb") as f:
+        with open(path, "wb") as f:
             f.write(file.getbuffer())
         st.rerun()
         
@@ -112,7 +112,14 @@ with c3:
 st.divider()
 
 # Get DATA
-df = df_from_whatsapp("_chat.txt")
+# Ordner für TXT-Dateien
+profiles_dir = 'chat'
+if not os.path.exists(profiles_dir):
+    os.makedirs(profiles_dir)
+    
+file_path = os.path.join(profiles_dir, "_chat.txt")
+
+df = df_from_whatsapp(file_path)
 df['date'] = pd.to_datetime(df['date'])
 df = df[df['date'] >= '2025-06-23']
 df['message'] = df['message'].apply(remove_emojis_and_tilde)
@@ -219,4 +226,4 @@ st.divider()
 c1, c2 = st.columns(2)
 c1.markdown('Daten von 15.06.2025 10:09')
 if c2.button('Daten updaten', type="primary", use_container_width=True):
-    update_data_file()
+    update_data_file(file_path)
