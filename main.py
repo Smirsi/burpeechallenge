@@ -16,6 +16,7 @@ def update_data_file():
     if st.button("File hochladen", type="primary", use_container_width=True) and pw == "hogi" and file is not None:
         with open(save_path, "wb") as f:
             f.write(file.getbuffer())
+        st.rerun()
         
     
 def remove_emojis_and_tilde(text):
