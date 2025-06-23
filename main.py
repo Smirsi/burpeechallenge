@@ -7,6 +7,16 @@ import plotly.graph_objs as go
 import sqlite3
 
 
+@st.dialog('Daten updaten')
+def update_data_file():
+    save_path = os.path.join(os.getcwd(), "_chat.txt")  # oder ein anderer Pfad
+    file = st.file_uploader('Datei auswählen', type=['.txt'], accept_multiple_files=False)
+    pw = st.text_input('Passwort')
+    if st.button("Daten updaten", type="primary", use_container_width=True) and pw == "hogi" and file is not None:
+        with open(save_path, "wb") as f:
+            f.write(file.getbuffer())
+        
+    
 def remove_emojis_and_tilde(text):
     return re.sub(r'[^\w\s,]', '', text)
 
@@ -22,10 +32,10 @@ def rules():
 
     ✅ **Höhenmeter** (egal, welchen Sport du ausübst — jedoch muss dieser **unmotorisiert** sein, außerdem zählen 
     nur **positive** Höhenmeter (nach oben)).  
-    ➡ 1 positiver Höhenmeter = 1 Punkt  
+    ➥ 1 positiver Höhenmeter = 1 Punkt  
 
     ✅ **Stockwerke** (auf deinem Handy gemessen) werden mit 3 multipliziert.  
-    ➡ 1 Stockwerk = 3 Punkte  
+    ➥ 1 Stockwerk = 3 Punkte  
 
     ✅ **Klimmzüge:**  
     ➥ Männer: 1 Klimmzug = 1 Punkt  
@@ -201,4 +211,7 @@ for i in range(len(df['Punkte'])):
     c[ci].markdown(f"##### :{color}[{i + 1}. | {df.at[i, 'Punkte']} | {df.at[i, 'Sportler']}]")
 
 st.divider()
-st.markdown('Daten von 15.06.2025 10:09')
+c1, c2 = st.columns(2)
+c1.markdown('Daten von 15.06.2025 10:09')
+if c2.button('Daten updaten', type="primary", use_container_width=True):
+    update_data_file()
