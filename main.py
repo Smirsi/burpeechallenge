@@ -5,6 +5,7 @@ import pandas as pd
 from datetime import date, timedelta
 import plotly.graph_objs as go
 import sqlite3
+import os
 
 
 @st.dialog('Daten updaten')
