@@ -4,20 +4,29 @@ import re
 import pandas as pd
 from datetime import date, timedelta
 import plotly.graph_objs as go
-import sqlite3
 import os
 
 
-@st.dialog('Daten updaten')
-def update_data_file(path):
-    # save_path = os.path.join(os.getcwd(), "_chat.txt")  # oder ein anderer Pfad
-    # save_path = "_chat.txt"
-    file = st.file_uploader('Datei auswählen', type=['.txt'], accept_multiple_files=False)
-    pw = st.text_input('Passwort')
-    if st.button("File hochladen", type="primary", use_container_width=True) and pw == "hogi" and file is not None:
-        with open(path, "wb") as f:
-            f.write(file.getbuffer())
-        st.rerun()
+# 1. Authentifizierung für Google Drive
+# @st.cache_resource
+# def authenticate_drive():
+#     gauth = GoogleAuth()
+#     gauth.LocalWebserverAuth()  # Nur beim ersten Mal notwendig
+#     return GoogleDrive(gauth)
+#
+# drive = authenticate_drive()
+
+
+# @st.dialog('Daten updaten')
+# def update_data_file(path):
+#     # save_path = os.path.join(os.getcwd(), "_chat.txt")  # oder ein anderer Pfad
+#     # save_path = "_chat.txt"
+#     file = st.file_uploader('Datei auswählen', type=['.zip'], accept_multiple_files=False)
+#     pw = st.text_input('Passwort')
+#     if st.button("File hochladen", type="primary", use_container_width=True) and pw == "Hogi" and file is not None:
+#         with open(path, "wb") as f:
+#             f.write(file.getbuffer())
+#         st.rerun()
         
     
 def remove_emojis_and_tilde(text):
@@ -108,15 +117,15 @@ with c3:
     st.markdown(f"#### Kickgrenze: {int(round(points_kick_next))}")
 st.divider()
 
-# Get DATA
-# Ordner für TXT-Dateien
-profiles_dir = './'
-# if not os.path.exists(profiles_dir):
-#    os.makedirs(profiles_dir)
-    
-file_path = os.path.join(profiles_dir, "_chat.txt")
+# # Get DATA
+# # Ordner für TXT-Dateien
+# profiles_dir = './'
+# # if not os.path.exists(profiles_dir):
+# #    os.makedirs(profiles_dir)
+#
+# file_path = os.path.join(profiles_dir, "_chat.txt")
 
-df = df_from_whatsapp(file_path)
+df = df_from_whatsapp("_chat.txt")
 df['date'] = pd.to_datetime(df['date'])
 df = df[df['date'] >= '2025-06-23']
 df['message'] = df['message'].apply(remove_emojis_and_tilde)
@@ -221,6 +230,6 @@ for i in range(len(df['Punkte'])):
 
 st.divider()
 c1, c2 = st.columns(2)
-c1.markdown('Daten von 15.06.2025 10:09')
-if c2.button('Daten updaten', type="primary", use_container_width=True):
-    update_data_file(file_path)
+c1.markdown('Daten von 24.06.2025 17:09')
+# if st.button('Daten updaten', type="primary", use_container_width=True):
+#    update_data_file(file_path)
