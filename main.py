@@ -216,7 +216,6 @@ for i in range(len(df['Punkte'])):
         c[4].markdown(f"#### Gekickt")
         ci = 4
 
-    print(df.at[i, 'Sportler'])
     # Double winners (2024, 2025)
     if df.at[i, 'Sportler'] in ['Valentin Eder', 'Philip']:
         df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🏆🏆'
