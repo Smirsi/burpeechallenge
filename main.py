@@ -82,7 +82,7 @@ plot_kick_today = True
 plot_kicked = True
 color = 'violet'
 
-date_start = date(2025, 6, 23)
+date_start = date(2025, 6, 22)
 date_end = date_start + timedelta(days=365)
 date_today = date.today()
 days_of_challenge = (date_today - date_start).days
