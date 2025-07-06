@@ -33,6 +33,30 @@ def remove_emojis_and_tilde(text):
     return re.sub(r'[^\w\s,]', '', text)
 
 
+def extract_points(text):
+    """
+    Extrahiert Punkte aus einer WhatsApp-Nachricht.
+    Zählt sowohl einfache Zahlen (auch mit . oder Leerzeichen) als auch Kombinationen wie '182hm 13klimmzüge'.
+    """
+    text = text.lower()
+    text = text.replace(".", "").replace(" ", "")  # Tausendertrennung entfernen
+    total = 0
+
+    # Suche nach Höhenmetern (z. B. "182hm", "182hm", "182hm")
+    matches_hm = re.findall(r'(\d+)\s*hm', text)
+    total += sum(int(hm) for hm in matches_hm)
+
+    # Suche nach Klimmzügen (z. B. "13klimmzüge", "13klimmes")
+    matches_klimm = re.findall(r'(\d+)\s*(klimmzüge|klimmes|klimmzug)', text)
+    total += sum(int(klimm) * 1 for klimm, _ in matches_klimm)  # ggf. Gewichtung anpassen
+
+    # Falls der Text nur aus einer Zahl besteht (nach Punkt-/Leerzeichen-Entfernung), zähle diese auch
+    if total == 0 and re.fullmatch(r'\d+', text):
+        total = int(text)
+
+    return total if total <= 270000 else 0  # Obergrenze
+
+
 def rules():
     st.markdown("""
     #### 🏔 Ziel  
@@ -131,10 +155,16 @@ df = df[df['date'] >= '2025-06-23']
 df['message'] = df['message'].apply(remove_emojis_and_tilde)
 df['username'] = df['username'].apply(remove_emojis_and_tilde)
 df['username'] = df['username'].str.strip()
-df = df[df['message'].str.isdigit()]
-df['message'] = df['message'].astype(int)
-df = df[df['message'] <= 27000]
-df = df.rename(columns={'username': 'Sportler', 'message': 'Punkte', 'date': 'Datum'})
+
+df['Punkte'] = df['message'].apply(extract_points)
+df = df[df['Punkte'] > 0]
+
+# df = df[df['message'].str.isdigit()]
+# df['message'] = df['message'].astype(int)
+# df = df[df['message'] <= 27000]
+# st.dataframe(df)
+df = df.rename(columns={'username': 'Sportler', 'date': 'Datum'})
+# df = df.rename(columns={'username': 'Sportler', 'message': 'Punkte', 'date': 'Datum'})
 
 # Frauds
 # df = df[df['Sportler'] != 'Reini Puhringer']
@@ -188,14 +218,14 @@ df = df.sort_values('Datum').drop_duplicates('Sportler', keep='last')
 df = df.sort_values('Punkte', ascending=False)
 df = df.reset_index(drop=True)
 df = df.drop(columns=['Datum'])
-
+# st.dataframe(df.sort_values('Sportler', ascending=False))
 st.divider()
 st.subheader(f'Ranking')
 c = st.columns(5)
 ci = 0
 c[ci].markdown(f"#### Challenge Completed")
 for i in range(len(df['Punkte'])):
-    if df.at[i, 'Punkte'] < 10000 and plot_done:
+    if df.at[i, 'Punkte'] < total_points_goal and plot_done:
         plot_done = False
         color = 'green'
         c[1].markdown(f"#### Über dem 2-Wochen-Ziel")
