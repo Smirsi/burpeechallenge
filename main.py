@@ -193,12 +193,12 @@ df = df.rename(columns={'username': 'Sportler', 'date': 'Datum'})
 #                ignore_index=True)
 
 # Top 10 User bestimmen
-topX_number = 15
+topX_number = 10
 final_punkte = df.sort_values(['Sportler', 'Datum']).groupby('Sportler').tail(1)
 topX = final_punkte.sort_values('Punkte', ascending=False).head(topX_number)['Sportler'].tolist()
 top_df = df[df['Sportler'].isin(topX)]
 
-st.subheader(f'Punkteverlauf der Top 15')
+st.subheader(f'Punkteverlauf der Top 10')
 # Plotly-Diagramm
 fig = go.Figure()
 for user, group in top_df.groupby('Sportler'):
