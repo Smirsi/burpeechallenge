@@ -118,9 +118,8 @@ while kick_date < date_today:
 days_of_challenge = (kick_date - date_start).days
 points_goal_next = total_points_goal / 365 * days_of_challenge
 points_kick_next = points_goal_next / (1 + 2 * (date_end - kick_date).days / 365)
-points_kicked = points_goal_next / (1 + 2 * (date_end - kick_date + timedelta(days=14)).days / 365)
-if points_kicked < 350:
-    points_kicked = 0
+
+points_kicked = (total_points_goal / 365 * (days_of_challenge - 15)) / (1 + 2 * (date_end - kick_date).days / 365)
 
 st.subheader(f'Nächster Kick')
 c1, c2, c3 = st.columns(3)
