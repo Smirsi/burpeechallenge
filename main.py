@@ -236,12 +236,12 @@ for i in range(len(df['Punkte'])):
         ci = 2
     if df.at[i, 'Punkte'] < points_goal_today and plot_today:
         plot_today = False
-        color = 'yellow'
+        color = 'orange'
         c[3].markdown(f"#### Über der 2-Wochen-Kickgrenze")
         ci = 3
     if df.at[i, 'Punkte'] < points_kick_next and plot_kick:
         plot_kick = False
-        color = 'orange'
+        color = 'grey'
         c[4].markdown(f"#### Unter der 2-Wochen-Kickgrenze")
         ci = 4
     if df.at[i, 'Punkte'] < points_kicked and plot_kick_today:
