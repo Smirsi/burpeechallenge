@@ -100,6 +100,7 @@ with st.expander("Regeln", expanded=False):
 
 plot_done = True
 plot_goal = True
+plot_today = True
 plot_kick = True
 plot_goal_today = True
 plot_kick_today = True
@@ -233,8 +234,8 @@ for i in range(len(df['Punkte'])):
         color = 'blue'
         c[2].markdown(f"#### Über dem heutigen Ziel")
         ci = 2
-    if df.at[i, 'Punkte'] < points_goal_today and plot_goal:
-        plot_goal = False
+    if df.at[i, 'Punkte'] < points_goal_today and plot_today:
+        plot_today = False
         color = 'aquamarine'
         c[3].markdown(f"#### Über der 2-Wochen-Kickgrenze")
         ci = 3
