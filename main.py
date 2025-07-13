@@ -236,7 +236,7 @@ for i in range(len(df['Punkte'])):
         ci = 2
     if df.at[i, 'Punkte'] < points_goal_today and plot_today:
         plot_today = False
-        color = 'aquamarine'
+        color = 'yellow'
         c[3].markdown(f"#### Über der 2-Wochen-Kickgrenze")
         ci = 3
     if df.at[i, 'Punkte'] < points_kick_next and plot_kick:
