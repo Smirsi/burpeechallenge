@@ -237,17 +237,17 @@ for i in range(len(df['Punkte'])):
         plot_goal = False
         color = 'aquamarine'
         c[3].markdown(f"#### Über der 2-Wochen-Kickgrenze")
-        ci = 2
+        ci = 3
     if df.at[i, 'Punkte'] < points_kick_next and plot_kick:
         plot_kick = False
         color = 'orange'
         c[4].markdown(f"#### Unter der 2-Wochen-Kickgrenze")
-        ci = 3
+        ci = 4
     if df.at[i, 'Punkte'] < points_kicked and plot_kick_today:
         plot_kick_today = False
         color = 'red'
         c[5].markdown(f"#### Gekickt")
-        ci = 4
+        ci = 5
 
     # Double winners (2024, 2025)
     if df.at[i, 'Sportler'] in ['Valentin Eder', 'Philip']:
