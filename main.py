@@ -117,27 +117,26 @@ while kick_date < date_today:
     kick_date += timedelta(days=14)
 days_of_challenge = (kick_date - date_start).days
 points_goal_next = total_points_goal / 365 * days_of_challenge
+points_goal_today = total_points_goal / 365 * (date_today - date_start).days
 points_kick_next = points_goal_next / (1 + 2 * (date_end - kick_date).days / 365)
 
 points_kicked = (total_points_goal / 365 * (days_of_challenge - 15)) / (1 + 2 * (date_end - kick_date).days / 365)
 
 st.subheader(f'Nächster Kick')
-c1, c2, c3 = st.columns(3)
-with c1:
-    if kick_date.day < 10:
-        if kick_date.month < 10:
-            st.markdown(f"#### 0{kick_date.day}.0{kick_date.month}.{kick_date.year} 18:00")
-        else:
-            st.markdown(f"#### 0{kick_date.day}.{kick_date.month}.{kick_date.year} 18:00")
+c1, c2, c3, c4 = st.columns(4)
+if kick_date.day < 10:
+    if kick_date.month < 10:
+        c1.markdown(f"#### 0{kick_date.day}.0{kick_date.month}.{kick_date.year} 18:00")
     else:
-        if kick_date.month < 10:
-            st.markdown(f"#### {kick_date.day}.0{kick_date.month}.{kick_date.year} 18:00")
-        else:
-            st.markdown(f"#### {kick_date.day}.{kick_date.month}.{kick_date.year} 18:00")
-with c2:
-    st.markdown(f"#### Zielpunktezahl: {int(round(points_goal_next))}")
-with c3:
-    st.markdown(f"#### Kickgrenze: {int(round(points_kick_next))}")
+        c1.markdown(f"#### 0{kick_date.day}.{kick_date.month}.{kick_date.year} 18:00")
+else:
+    if kick_date.month < 10:
+        c1.markdown(f"#### {kick_date.day}.0{kick_date.month}.{kick_date.year} 18:00")
+    else:
+        c1.markdown(f"#### {kick_date.day}.{kick_date.month}.{kick_date.year} 18:00")
+c2.markdown(f"#### Zielpunktezahl: {int(round(points_goal_next))}")
+c3.markdown(f"#### Kickgrenze: {int(round(points_kick_next))}")
+c4.markdown(f"#### Heutiges Ziel: {int(round(points_goal_today))}")
 st.divider()
 
 # # Get DATA
@@ -232,6 +231,11 @@ for i in range(len(df['Punkte'])):
     if df.at[i, 'Punkte'] < points_goal_next and plot_goal:
         plot_goal = False
         color = 'blue'
+        c[2].markdown(f"#### Über dem heutigen Ziel")
+        ci = 2
+    if df.at[i, 'Punkte'] < points_goal_next and plot_goal:
+        plot_goal = False
+        color = 'aquamarine'
         c[2].markdown(f"#### Über der 2-Wochen-Kickgrenze")
         ci = 2
     if df.at[i, 'Punkte'] < points_kick_next and plot_kick:
@@ -258,6 +262,6 @@ for i in range(len(df['Punkte'])):
 
 st.divider()
 c1, c2 = st.columns(2)
-c1.markdown('Daten von 10.07.2025 18:03')
+c1.markdown('Daten von 13.07.2025 14:30')
 # if st.button('Daten updaten', type="primary", use_container_width=True):
 #    update_data_file(file_path)
