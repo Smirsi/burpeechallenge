@@ -219,7 +219,7 @@ df = df.drop(columns=['Datum'])
 # st.dataframe(df.sort_values('Sportler', ascending=False))
 st.divider()
 st.subheader(f'Ranking')
-c = st.columns(5)
+c = st.columns(6)
 ci = 0
 c[ci].markdown(f"#### Challenge Completed")
 for i in range(len(df['Punkte'])):
@@ -236,17 +236,17 @@ for i in range(len(df['Punkte'])):
     if df.at[i, 'Punkte'] < points_goal_next and plot_goal:
         plot_goal = False
         color = 'aquamarine'
-        c[2].markdown(f"#### Über der 2-Wochen-Kickgrenze")
+        c[3].markdown(f"#### Über der 2-Wochen-Kickgrenze")
         ci = 2
     if df.at[i, 'Punkte'] < points_kick_next and plot_kick:
         plot_kick = False
         color = 'orange'
-        c[3].markdown(f"#### Unter der 2-Wochen-Kickgrenze")
+        c[4].markdown(f"#### Unter der 2-Wochen-Kickgrenze")
         ci = 3
     if df.at[i, 'Punkte'] < points_kicked and plot_kick_today:
         plot_kick_today = False
         color = 'red'
-        c[4].markdown(f"#### Gekickt")
+        c[5].markdown(f"#### Gekickt")
         ci = 4
 
     # Double winners (2024, 2025)
