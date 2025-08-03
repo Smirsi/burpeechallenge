@@ -231,11 +231,11 @@ for i in range(len(df['Punkte'])):
     if df.at[i, 'Punkte'] < total_points_goal_triple and plot_done_triple:
         plot_done_triple = False
         c[1].markdown(f"#### Double Champion")
-        ci = 1
+        ci = 0
     if df.at[i, 'Punkte'] < total_points_goal_double and plot_done_double:
         plot_done_double = False
         c[1].markdown(f"#### Challenge Completed")
-        ci = 1
+        ci = 0
     if df.at[i, 'Punkte'] < total_points_goal and plot_done:
         plot_done = False
         color = 'green'
