@@ -99,6 +99,8 @@ with st.expander("Regeln", expanded=False):
     rules()
 
 plot_done = True
+plot_done_double = True
+plot_done_triple = True
 plot_goal = True
 plot_today = True
 plot_kick = True
@@ -112,6 +114,8 @@ date_end = date_start + timedelta(days=365)
 date_today = date.today()
 days_of_challenge = (date_today - date_start).days
 total_points_goal = 26547
+total_points_goal_double = 26547 * 2
+total_points_goal_triple = 26547 * 3
 
 kick_date = date_start + timedelta(days=14)
 while kick_date < date_today:
@@ -222,8 +226,16 @@ st.divider()
 st.subheader(f'Ranking')
 c = st.columns(6)
 ci = 0
-c[ci].markdown(f"#### Challenge Completed")
+c[ci].markdown(f"#### Triple Champion")
 for i in range(len(df['Punkte'])):
+    if df.at[i, 'Punkte'] < total_points_goal_triple and plot_done_triple:
+        plot_done_triple = False
+        c[1].markdown(f"#### Double Champion")
+        ci = 1
+    if df.at[i, 'Punkte'] < total_points_goal_double and plot_done_double:
+        plot_done_double = False
+        c[1].markdown(f"#### Challenge Completed")
+        ci = 1
     if df.at[i, 'Punkte'] < total_points_goal and plot_done:
         plot_done = False
         color = 'green'
@@ -250,15 +262,18 @@ for i in range(len(df['Punkte'])):
         c[5].markdown(f"#### Gekickt")
         ci = 5
 
+    df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' '
     # Double winners (2024, 2025)
     if df.at[i, 'Sportler'] in ['Valentin Eder', 'Philip']:
-        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🏆🏆'
+        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + '🏆🏆'
     # Winners 2024
     if df.at[i, 'Sportler'] in ['Norbert Gattringer', 'Tamara Hofer', 'Christoph Hofer']:
-        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🏆'
+        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + '🏆'
     # Winners 2025
     if df.at[i, 'Sportler'] in ['Carina Gstottner', 'Franzi', 'Mathias', 'Paul Schmidt', 'Simon Paireder', 'Eva']:
-        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' 🏆'
+        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + '🏆'
+    if df.at[i, 'Punkte'] > total_points_goal:
+        df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + '🏆'
     c[ci].markdown(f"##### :{color}[{i + 1}. | {df.at[i, 'Punkte']} | {df.at[i, 'Sportler']}]")
 
 st.divider()
