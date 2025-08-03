@@ -261,14 +261,16 @@ for i in range(len(df['Punkte'])):
         ci = 5
 
     df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + ' '
+    if df.at[i, 'Sportler'] in ['Mama ']:
+        df.at[i, 'Sportler'] = 'Brigitte '
     # Double winners (2024, 2025)
-    if df.at[i, 'Sportler'] in ['Valentin Eder', 'Philip']:
+    if df.at[i, 'Sportler'] in ['Valentin Eder ', 'Philip ']:
         df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + '🏆🏆'
     # Winners 2024
-    if df.at[i, 'Sportler'] in ['Norbert Gattringer', 'Tamara Hofer', 'Christoph Hofer']:
+    if df.at[i, 'Sportler'] in ['Norbert Gattringer ', 'Tamara Hofer ', 'Christoph Hofer ']:
         df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + '🏆'
     # Winners 2025
-    if df.at[i, 'Sportler'] in ['Carina Gstottner', 'Franzi', 'Mathias', 'Paul Schmidt', 'Simon Paireder', 'Eva']:
+    if df.at[i, 'Sportler'] in ['Carina Gstottner ', 'Franzi ', 'Mathias ', 'Paul Schmidt ', 'Simon Paireder ', 'Eva' ]:
         df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + '🏆'
     if df.at[i, 'Punkte'] > total_points_goal:
         df.at[i, 'Sportler'] = df.at[i, 'Sportler'] + '🏆'
