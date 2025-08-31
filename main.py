@@ -278,6 +278,6 @@ for i in range(len(df['Punkte'])):
 
 st.divider()
 c1, c2 = st.columns(2)
-c1.markdown('Daten von 31.08.2025 09:53')
+c1.markdown('Daten von 31.08.2025 18:53')
 # if st.button('Daten updaten', type="primary", use_container_width=True):
 #    update_data_file(file_path)
