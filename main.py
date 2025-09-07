@@ -217,8 +217,8 @@ fig.update_layout(xaxis_title='Datum',
 st.plotly_chart(fig, use_container_width=True)
 
 # Write all personen down in a list
-df = df.sort_values('Datum').drop_duplicates('Sportler', keep='last')
 df = df[df['Sportler'] != 'jordis']
+df = df.sort_values('Datum').drop_duplicates('Sportler', keep='last')
 df = df.sort_values('Punkte', ascending=False)
 df = df.reset_index(drop=True)
 df = df.drop(columns=['Datum'])
